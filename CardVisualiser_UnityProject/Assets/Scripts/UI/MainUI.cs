@@ -22,13 +22,25 @@ namespace StratosphereGames
     public class MainUI : MonoBehaviour
     {
         [SerializeField]
-        private CardCategoryType StartCategory;
+        private CardCategoryType            StartCategory;
         [SerializeField]
-        private List<ToggleButtonMapping> ButtonMapping;
+        private List<ToggleButtonMapping>   ButtonMapping;
         [SerializeField]
-        private RectTransform CardRoot; // cards will be added here
+        private RectTransform               CardRoot; // cards will be added here
+        [SerializeField]
+        private GameObject                  CardElementPrefab; // cards will be added here
 
-        private CardCategoryType CurrentCategory;
+        private CardInfoMapping             CardMapping;
+
+        private CardCategoryType            CurrentCategory;
+
+        private List<GameObject>            InstantiatedCards;
+
+        private void Awake()
+        {
+            CardMapping = CardInfoMapping.GetMapping<CardInfoMapping>();
+            InstantiatedCards = new List<GameObject>();
+        }
 
         private void Start()
         {
@@ -64,7 +76,68 @@ namespace StratosphereGames
 
         private void UpdateContent()
         {
-            // Pls add content
+            DeleteAllInstantiatedCards();
+
+            //for display testing purpose I add more cards
+            for (int i = 6; i > 0; i--)
+            {
+                PopulateOneCardOfEach(CurrentCategory);
+            }
+        }
+
+        private void PopulateOneCardOfEach(CardCategoryType category)
+        {
+            foreach(CardInfoMappingElement cardMappingElt in CardMapping.Mapping)
+            {
+                GameObject cardObj = Instantiate(CardElementPrefab, CardRoot);
+                CardElementPresenter presenter = cardObj.GetComponent<CardElementPresenter>();
+                CardInfo info = cardMappingElt.Info;
+
+                presenter.SetPicture(UISpriteMapping.GetMapping<UISpriteMapping>().GetElementForType(info.Sprite).Sprite);
+                presenter.SetCosts(info.Costs);
+                presenter.SetRarity(info.RarityColor);
+                presenter.SetLevel(info.Level);
+                presenter.SetFactoryCosts(info.ConstructionCosts, info.CollectedScraps);
+
+                DisplayCardElementsForCategory(category, presenter);
+
+                InstantiatedCards.Add(cardObj);
+            }
+        }
+
+        private void DeleteAllInstantiatedCards()
+        {
+            foreach (GameObject obj in InstantiatedCards)
+                Destroy(obj);
+        }
+
+        private void DisplayCardElementsForCategory(CardCategoryType category, CardElementPresenter presenter)
+        {
+            switch (category)
+            {
+                case CardCategoryType.None:
+                    break;
+                case CardCategoryType.Shop:
+                    presenter.ShowCosts(true);
+                    presenter.ShowRarity(false);
+                    presenter.ShowLevel(false);
+                    presenter.ShowFactoryCosts(false);
+                    break;
+                case CardCategoryType.Deck:
+                    presenter.ShowCosts(false);
+                    presenter.ShowRarity(true);
+                    presenter.ShowLevel(true);
+                    presenter.ShowFactoryCosts(false);
+                    break;
+                case CardCategoryType.Factory:
+                    presenter.ShowCosts(false);
+                    presenter.ShowRarity(true);
+                    presenter.ShowLevel(false);
+                    presenter.ShowFactoryCosts(true);
+                    break;
+                default:
+                    break;
+            }
         }
     }
 
