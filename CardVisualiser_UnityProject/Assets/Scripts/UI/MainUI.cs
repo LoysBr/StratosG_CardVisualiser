@@ -93,25 +93,20 @@ namespace StratosphereGames
             foreach(CardInfoMappingElement cardMappingElt in CardMapping.Mapping)
             {
                 GameObject cardObj = Instantiate(CardElementPrefab, CardRoot);
-               // CardElementPresenter presenter = cardObj.GetComponent<CardElementPresenter>();
-                CardInfo info = cardMappingElt.Info;
-                              
 
-                foreach(UIDataMapping mapping in cardMappingElt.CardInfoDataMapping)
+                if (cardMappingElt.CardInfoDataMapping != null)
                 {
-                    //TODO : IF category "dataName" == mappingElement.Name ?
-                    mapping.SetParentObject(cardObj);
-                    mapping.SetAndShow();                    
+                    foreach (UIDataMapping mapping in cardMappingElt.CardInfoDataMapping)
+                    {
+                        //TODO : IF category "dataName" == mappingElement.Name ?
+
+                        mapping.SetParentObject(cardObj);
+                        mapping.FindObjectFromName();
+                        mapping.SetValues();
+                    }
                 }
 
-                //presenter.SetPicture(UISpriteMapping.GetMapping<UISpriteMapping>().GetElementForType(info.Sprite).Sprite);
-                //presenter.SetCosts(info.Costs);
-                //presenter.SetRarity(info.RarityColor);
-                //presenter.SetLevel(info.Level);
-                //presenter.SetFactoryCosts(info.ConstructionCosts, info.CollectedScraps);
-
                 //DisplayCardElementsForCategory(category, presenter);
-
                 InstantiatedCards.Add(cardObj);
             }
         }
@@ -129,9 +124,6 @@ namespace StratosphereGames
                 case CardCategoryType.None:
                     break;
                 case CardCategoryType.Shop:
-
-
-
                     presenter.ShowCosts(true);
                     presenter.ShowRarity(false);
                     presenter.ShowLevel(false);

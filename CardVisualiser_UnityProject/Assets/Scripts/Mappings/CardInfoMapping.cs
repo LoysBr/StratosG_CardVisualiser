@@ -15,18 +15,6 @@ namespace StratosphereGames
     }
 
     [Serializable]
-    public class CardInfo
-    {       
-
-        public SpriteType Sprite;
-        public int Level;
-        public Color RarityColor;
-        public int Costs;
-        public int ConstructionCosts; // in scraps
-        public int CollectedScraps;
-    }
-
-    [Serializable]
     public class CardInfoMappingElement : IHasEnumType<CardId>
     {
         [SerializeField]
@@ -38,7 +26,6 @@ namespace StratosphereGames
                 return _Type;
             }
         }
-        public CardInfo Info;
 
         public List<UIDataMapping> CardInfoDataMapping;
     }
@@ -46,12 +33,12 @@ namespace StratosphereGames
     [CreateAssetMenu(fileName = "CardInfoMapping", menuName = "AssetMappings/CardInfoMapping")]
     public class CardInfoMapping : MappingAsset<CardInfoMapping, CardId, CardInfoMappingElement>
     {
-        public CardInfo GetCardInfoForType(CardId id)
+        public List<UIDataMapping> CardInfoDataMappingForType(CardId id)
         {
             var element = GetElementForType(id);
             if(element != null)
             {
-                return element.Info;
+                return element.CardInfoDataMapping;
             }
             return null;
         }
