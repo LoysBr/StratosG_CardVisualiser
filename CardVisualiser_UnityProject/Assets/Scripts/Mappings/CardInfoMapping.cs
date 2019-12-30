@@ -16,8 +16,7 @@ namespace StratosphereGames
 
     [Serializable]
     public class CardInfo
-    {
-        public List<UIDataMappingElement> UIDataMappingElements;
+    {       
 
         public SpriteType Sprite;
         public int Level;
@@ -40,6 +39,8 @@ namespace StratosphereGames
             }
         }
         public CardInfo Info;
+
+        public List<UIDataMapping> CardInfoDataMapping;
     }
 
     [CreateAssetMenu(fileName = "CardInfoMapping", menuName = "AssetMappings/CardInfoMapping")]

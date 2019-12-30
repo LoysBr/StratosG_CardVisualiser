@@ -95,11 +95,13 @@ namespace StratosphereGames
                 GameObject cardObj = Instantiate(CardElementPrefab, CardRoot);
                // CardElementPresenter presenter = cardObj.GetComponent<CardElementPresenter>();
                 CardInfo info = cardMappingElt.Info;
+                              
 
-                foreach(UIDataMappingElement mappingElement in info.UIDataMappingElements)
+                foreach(UIDataMapping mapping in cardMappingElt.CardInfoDataMapping)
                 {
                     //TODO : IF category "dataName" == mappingElement.Name ?
-                    mappingElement.SetAndShow();                    
+                    mapping.SetParentObject(cardObj);
+                    mapping.SetAndShow();                    
                 }
 
                 //presenter.SetPicture(UISpriteMapping.GetMapping<UISpriteMapping>().GetElementForType(info.Sprite).Sprite);

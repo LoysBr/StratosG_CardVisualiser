@@ -15,82 +15,190 @@ MonoBehaviour:
   Mapping:
   - _Type: 1
     Info:
-      UIDataMappingElements:
-      - Name: Picture
-        Type: 2
-        UIObjectName: UnitIcon
-        UIData:
-          Format: 
-          IntegerValue1: 0
-          IntegerValue2: 0
-          ColorValue: {r: 0, g: 0, b: 0, a: 0}
-          SpriteTypeValue: 200
-      - Name: ClanCosts
-        Type: 1
-        UIObjectName: TxtClanCosts
-        UIData:
-          Format: ClanCosts {0}
-          IntegerValue1: 7777
-          IntegerValue2: 0
-          ColorValue: {r: 0, g: 0, b: 0, a: 0}
-          SpriteTypeValue: 0
-      - Name: 
-        Type: 0
-        UIObjectName: 
-        UIData:
-          Format: 
-          IntegerValue1: 0
-          IntegerValue2: 0
-          ColorValue: {r: 0, g: 0, b: 0, a: 0}
-          SpriteTypeValue: 0
-      - Name: 
-        Type: 0
-        UIObjectName: 
-        UIData:
-          Format: 
-          IntegerValue1: 0
-          IntegerValue2: 0
-          ColorValue: {r: 0, g: 0, b: 0, a: 0}
-          SpriteTypeValue: 0
-      - Name: 
-        Type: 0
-        UIObjectName: 
-        UIData:
-          Format: 
-          IntegerValue1: 0
-          IntegerValue2: 0
-          ColorValue: {r: 0, g: 0, b: 0, a: 0}
-          SpriteTypeValue: 0
-      - Name: 
-        Type: 0
-        UIObjectName: 
-        UIData:
-          Format: 
-          IntegerValue1: 0
-          IntegerValue2: 0
-          ColorValue: {r: 0, g: 0, b: 0, a: 0}
-          SpriteTypeValue: 0
       Sprite: 200
       Level: 4
       RarityColor: {r: 0.123274505, g: 0.72, b: 0, a: 1}
       Costs: 200
       ConstructionCosts: 3
       CollectedScraps: 2
+    CardInfoDataMapping:
+    - Name: Picture
+      Type: 2
+      UIObjectName: UnitIcon
+      UIDataValues:
+        Format: 
+        IntegerValue1: 0
+        IntegerValue2: 0
+        ColorValue: {r: 0, g: 0, b: 0, a: 0}
+        SpriteTypeValue: 200
+    - Name: Level
+      Type: 1
+      UIObjectName: TxtLevel
+      UIDataValues:
+        Format: LVL {0}
+        IntegerValue1: 4
+        IntegerValue2: 0
+        ColorValue: {r: 0, g: 0, b: 0, a: 0}
+        SpriteTypeValue: 0
+    - Name: Costs
+      Type: 1
+      UIObjectName: UnitCostDisplay
+      UIDataValues:
+        Format: 
+        IntegerValue1: 200
+        IntegerValue2: 0
+        ColorValue: {r: 0, g: 0, b: 0, a: 0}
+        SpriteTypeValue: 0
+    - Name: FactoryCosts
+      Type: 1
+      UIObjectName: PartsCostDisplay
+      UIDataValues:
+        Format: '{0}/{1}'
+        IntegerValue1: 2
+        IntegerValue2: 3
+        ColorValue: {r: 0, g: 0, b: 0, a: 0}
+        SpriteTypeValue: 0
+    - Name: Rarity
+      Type: 3
+      UIObjectName: RarityGlow
+      UIDataValues:
+        Format: 
+        IntegerValue1: 0
+        IntegerValue2: 0
+        ColorValue: {r: 0.123274505, g: 0.72, b: 0, a: 1}
+        SpriteTypeValue: 0
+    - Name: ClanCosts
+      Type: 1
+      UIObjectName: TxtClanCosts
+      UIDataValues:
+        Format: ClanCosts {0}
+        IntegerValue1: 777
+        IntegerValue2: 0
+        ColorValue: {r: 0, g: 0, b: 0, a: 0}
+        SpriteTypeValue: 0
   - _Type: 2
     Info:
-      UIDataMappingElements: []
       Sprite: 201
       Level: 2
       RarityColor: {r: 1, g: 0.5295368, b: 0, a: 1}
       Costs: 550
       ConstructionCosts: 15
       CollectedScraps: 15
+    CardInfoDataMapping:
+    - Name: Picture
+      Type: 2
+      UIObjectName: UnitIcon
+      UIDataValues:
+        Format: 
+        IntegerValue1: 0
+        IntegerValue2: 0
+        ColorValue: {r: 0, g: 0, b: 0, a: 0}
+        SpriteTypeValue: 201
+    - Name: Level
+      Type: 1
+      UIObjectName: TxtLevel
+      UIDataValues:
+        Format: LVL {0}
+        IntegerValue1: 2
+        IntegerValue2: 0
+        ColorValue: {r: 0, g: 0, b: 0, a: 0}
+        SpriteTypeValue: 0
+    - Name: Rarity
+      Type: 3
+      UIObjectName: RarityGlow
+      UIDataValues:
+        Format: 
+        IntegerValue1: 0
+        IntegerValue2: 0
+        ColorValue: {r: 1, g: 0.5295368, b: 0, a: 1}
+        SpriteTypeValue: 0
+    - Name: Costs
+      Type: 1
+      UIObjectName: UnitCostDisplay
+      UIDataValues:
+        Format: 
+        IntegerValue1: 550
+        IntegerValue2: 0
+        ColorValue: {r: 0, g: 0, b: 0, a: 0}
+        SpriteTypeValue: 0
+    - Name: FactoryCosts
+      Type: 1
+      UIObjectName: PartsCostDisplay
+      UIDataValues:
+        Format: '{0}/{1}'
+        IntegerValue1: 15
+        IntegerValue2: 15
+        ColorValue: {r: 0, g: 0, b: 0, a: 0}
+        SpriteTypeValue: 0
+    - Name: ClanCosts
+      Type: 1
+      UIObjectName: TxtClanCosts
+      UIDataValues:
+        Format: ClanCosts {0}
+        IntegerValue1: 666
+        IntegerValue2: 0
+        ColorValue: {r: 0, g: 0, b: 0, a: 0}
+        SpriteTypeValue: 0
   - _Type: 3
     Info:
-      UIDataMappingElements: []
       Sprite: 202
       Level: 6
       RarityColor: {r: 1, g: 0, b: 0.96763754, a: 1}
       Costs: 325
       ConstructionCosts: 5
       CollectedScraps: 2
+    CardInfoDataMapping:
+    - Name: Picture
+      Type: 2
+      UIObjectName: UnitIcon
+      UIDataValues:
+        Format: 
+        IntegerValue1: 0
+        IntegerValue2: 0
+        ColorValue: {r: 0, g: 0, b: 0, a: 0}
+        SpriteTypeValue: 200
+    - Name: Costs
+      Type: 1
+      UIObjectName: UnitCostDisplay
+      UIDataValues:
+        Format: 
+        IntegerValue1: 325
+        IntegerValue2: 0
+        ColorValue: {r: 0, g: 0, b: 0, a: 0}
+        SpriteTypeValue: 0
+    - Name: FactoryCosts
+      Type: 1
+      UIObjectName: PartsCostDisplay
+      UIDataValues:
+        Format: '{0}/{1}'
+        IntegerValue1: 2
+        IntegerValue2: 5
+        ColorValue: {r: 0, g: 0, b: 0, a: 0}
+        SpriteTypeValue: 0
+    - Name: Rarity
+      Type: 3
+      UIObjectName: RarityGlow
+      UIDataValues:
+        Format: 
+        IntegerValue1: 0
+        IntegerValue2: 0
+        ColorValue: {r: 1, g: 0, b: 0.96763754, a: 1}
+        SpriteTypeValue: 0
+    - Name: Level
+      Type: 1
+      UIObjectName: TxtLevel
+      UIDataValues:
+        Format: LVL {0}
+        IntegerValue1: 6
+        IntegerValue2: 0
+        ColorValue: {r: 0, g: 0, b: 0, a: 0}
+        SpriteTypeValue: 0
+    - Name: ClanCosts
+      Type: 1
+      UIObjectName: TxtClanCosts
+      UIDataValues:
+        Format: ClanCosts {0}
+        IntegerValue1: 4924
+        IntegerValue2: 0
+        ColorValue: {r: 0, g: 0, b: 0, a: 0}
+        SpriteTypeValue: 0

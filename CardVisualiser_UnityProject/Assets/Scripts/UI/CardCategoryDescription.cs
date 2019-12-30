@@ -10,6 +10,6 @@ namespace StratosphereGames
     {
         public CardCategoryType CategoryType;
 
-        public List<UIDataMappingElement> DataMappers;
+        public List<UIDataMapping> DataMappers;
     }
 }

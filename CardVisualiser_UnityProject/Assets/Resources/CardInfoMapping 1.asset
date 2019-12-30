@@ -1,0 +1,33 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fbf911f210821c342a53d363e461cf3e, type: 3}
+  m_Name: CardInfoMapping 1
+  m_EditorClassIdentifier: 
+  Mapping:
+  - _Type: 3
+    Info:
+      Sprite: 0
+      Level: 0
+      RarityColor: {r: 0, g: 0, b: 0, a: 0}
+      Costs: 0
+      ConstructionCosts: 0
+      CollectedScraps: 0
+    CardInfoDataMapping: []
+  - _Type: 0
+    Info:
+      Sprite: 0
+      Level: 0
+      RarityColor: {r: 0, g: 0, b: 0, a: 0}
+      Costs: 0
+      ConstructionCosts: 0
+      CollectedScraps: 0
+    CardInfoDataMapping: []
