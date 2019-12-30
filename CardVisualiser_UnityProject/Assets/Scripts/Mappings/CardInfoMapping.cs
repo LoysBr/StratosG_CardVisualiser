@@ -38,6 +38,7 @@ namespace StratosphereGames
         }
 
         public List<UIDataMapping> CardInfoDataMapping;
+        public List<CardUIDataMapping> CardUIDataMapping;
     }
 
     [CreateAssetMenu(fileName = "CardInfoMapping", menuName = "AssetMappings/CardInfoMapping")]
@@ -52,5 +53,12 @@ namespace StratosphereGames
             }
             return null;
         }
+    }
+
+    [Serializable]
+    public class CardUIDataMapping : UIDataMapping
+    {
+        public CardUIDataID CardUIDataID;
+
     }
 }

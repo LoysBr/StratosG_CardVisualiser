@@ -89,13 +89,17 @@ namespace StratosphereGames
 
                 if (cardMappingElt.CardInfoDataMapping != null)
                 {
-                    foreach (UIDataMapping mapping in cardMappingElt.CardInfoDataMapping)
+                    foreach (CardUIDataMapping mapping in cardMappingElt.CardInfoDataMapping)
                     {
-                        //TODO : IF category "dataName" == mappingElement.Name ?
+                        
 
                         mapping.SetParentObject(cardObj);
                         mapping.FindObjectFromName();
                         mapping.SetValues();
+
+                        //TODO : show / hide management
+                       //mapping.CardUIDataID ==
+                        //List<CardUIDataID> cardIDS = CardCategoryMapping.GetMapping<CardCategoryMapping>().CardInfoDataMappingForType(category);
                     }
                 }
 

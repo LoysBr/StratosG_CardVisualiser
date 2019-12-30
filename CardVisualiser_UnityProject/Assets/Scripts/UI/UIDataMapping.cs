@@ -36,10 +36,10 @@ namespace StratosphereGames.Base
         public string UIObjectName;
 
         //to show/hide object
-        private GameObject UIObject;
+        protected GameObject UIObject;
 
         //to look for Child components only into this object
-        private GameObject ParentObject;
+        protected GameObject ParentObject;
         public void SetParentObject(GameObject obj) { ParentObject = obj; }
         
         public void FindObjectFromName()
@@ -107,7 +107,7 @@ namespace StratosphereGames.Base
             {
                 Debug.LogErrorFormat("UIObject not set.");
             }
-        }
+        }              
 
         public void SetValues()
         {
