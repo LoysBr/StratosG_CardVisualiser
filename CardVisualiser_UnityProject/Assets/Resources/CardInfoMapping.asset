@@ -4,7 +4,8 @@
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
@@ -14,6 +15,61 @@ MonoBehaviour:
   Mapping:
   - _Type: 1
     Info:
+      UIDataMappingElements:
+      - Name: Picture
+        Type: 2
+        UIObjectName: UnitIcon
+        UIData:
+          Format: 
+          IntegerValue1: 0
+          IntegerValue2: 0
+          ColorValue: {r: 0, g: 0, b: 0, a: 0}
+          SpriteTypeValue: 200
+      - Name: ClanCosts
+        Type: 1
+        UIObjectName: TxtClanCosts
+        UIData:
+          Format: ClanCosts {0}
+          IntegerValue1: 7777
+          IntegerValue2: 0
+          ColorValue: {r: 0, g: 0, b: 0, a: 0}
+          SpriteTypeValue: 0
+      - Name: 
+        Type: 0
+        UIObjectName: 
+        UIData:
+          Format: 
+          IntegerValue1: 0
+          IntegerValue2: 0
+          ColorValue: {r: 0, g: 0, b: 0, a: 0}
+          SpriteTypeValue: 0
+      - Name: 
+        Type: 0
+        UIObjectName: 
+        UIData:
+          Format: 
+          IntegerValue1: 0
+          IntegerValue2: 0
+          ColorValue: {r: 0, g: 0, b: 0, a: 0}
+          SpriteTypeValue: 0
+      - Name: 
+        Type: 0
+        UIObjectName: 
+        UIData:
+          Format: 
+          IntegerValue1: 0
+          IntegerValue2: 0
+          ColorValue: {r: 0, g: 0, b: 0, a: 0}
+          SpriteTypeValue: 0
+      - Name: 
+        Type: 0
+        UIObjectName: 
+        UIData:
+          Format: 
+          IntegerValue1: 0
+          IntegerValue2: 0
+          ColorValue: {r: 0, g: 0, b: 0, a: 0}
+          SpriteTypeValue: 0
       Sprite: 200
       Level: 4
       RarityColor: {r: 0.123274505, g: 0.72, b: 0, a: 1}
@@ -22,6 +78,7 @@ MonoBehaviour:
       CollectedScraps: 2
   - _Type: 2
     Info:
+      UIDataMappingElements: []
       Sprite: 201
       Level: 2
       RarityColor: {r: 1, g: 0.5295368, b: 0, a: 1}
@@ -30,6 +87,7 @@ MonoBehaviour:
       CollectedScraps: 15
   - _Type: 3
     Info:
+      UIDataMappingElements: []
       Sprite: 202
       Level: 6
       RarityColor: {r: 1, g: 0, b: 0.96763754, a: 1}

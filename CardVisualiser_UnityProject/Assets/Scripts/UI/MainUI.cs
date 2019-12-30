@@ -2,6 +2,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 namespace StratosphereGames
 {
@@ -21,6 +22,8 @@ namespace StratosphereGames
 
     public class MainUI : MonoBehaviour
     {
+        //[SerializeField]
+        //private List<CardCategoryDescription> CardCategories;
         [SerializeField]
         private CardCategoryType            StartCategory;
         [SerializeField]
@@ -90,16 +93,22 @@ namespace StratosphereGames
             foreach(CardInfoMappingElement cardMappingElt in CardMapping.Mapping)
             {
                 GameObject cardObj = Instantiate(CardElementPrefab, CardRoot);
-                CardElementPresenter presenter = cardObj.GetComponent<CardElementPresenter>();
+               // CardElementPresenter presenter = cardObj.GetComponent<CardElementPresenter>();
                 CardInfo info = cardMappingElt.Info;
 
-                presenter.SetPicture(UISpriteMapping.GetMapping<UISpriteMapping>().GetElementForType(info.Sprite).Sprite);
-                presenter.SetCosts(info.Costs);
-                presenter.SetRarity(info.RarityColor);
-                presenter.SetLevel(info.Level);
-                presenter.SetFactoryCosts(info.ConstructionCosts, info.CollectedScraps);
+                foreach(UIDataMappingElement mappingElement in info.UIDataMappingElements)
+                {
+                    //TODO : IF category "dataName" == mappingElement.Name ?
+                    mappingElement.SetAndShow();                    
+                }
 
-                DisplayCardElementsForCategory(category, presenter);
+                //presenter.SetPicture(UISpriteMapping.GetMapping<UISpriteMapping>().GetElementForType(info.Sprite).Sprite);
+                //presenter.SetCosts(info.Costs);
+                //presenter.SetRarity(info.RarityColor);
+                //presenter.SetLevel(info.Level);
+                //presenter.SetFactoryCosts(info.ConstructionCosts, info.CollectedScraps);
+
+                //DisplayCardElementsForCategory(category, presenter);
 
                 InstantiatedCards.Add(cardObj);
             }
@@ -118,6 +127,9 @@ namespace StratosphereGames
                 case CardCategoryType.None:
                     break;
                 case CardCategoryType.Shop:
+
+
+
                     presenter.ShowCosts(true);
                     presenter.ShowRarity(false);
                     presenter.ShowLevel(false);

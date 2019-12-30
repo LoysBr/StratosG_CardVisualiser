@@ -17,6 +17,8 @@ namespace StratosphereGames
     [Serializable]
     public class CardInfo
     {
+        public List<UIDataMappingElement> UIDataMappingElements;
+
         public SpriteType Sprite;
         public int Level;
         public Color RarityColor;
