@@ -2,9 +2,8 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
-using StratosphereGames.Base;
 
-namespace StratosphereGames
+namespace StratosphereGames.Base
 {
     public enum UIDataValueType
     {

@@ -3,17 +3,10 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using StratosphereGames.Base;
 
 namespace StratosphereGames
 {
-    public enum CardCategoryType
-    {
-        None = 0,
-        Shop = 1,
-        Deck = 2,
-        Factory = 3,
-    }
-
     [Serializable]
     public struct ToggleButtonMapping {
         public CardCategoryType Type;
@@ -117,29 +110,29 @@ namespace StratosphereGames
                 Destroy(obj);
         }
 
-        private void DisplayCardElementsForCategory(CardCategoryType category, CardElementPresenter presenter)
+        private void DisplayCardElementsForCategory(CardCategoryType category)
         {
             switch (category)
             {
                 case CardCategoryType.None:
                     break;
                 case CardCategoryType.Shop:
-                    presenter.ShowCosts(true);
-                    presenter.ShowRarity(false);
-                    presenter.ShowLevel(false);
-                    presenter.ShowFactoryCosts(false);
+                    //presenter.ShowCosts(true);
+                    //presenter.ShowRarity(false);
+                    //presenter.ShowLevel(false);
+                    //presenter.ShowFactoryCosts(false);
                     break;
                 case CardCategoryType.Deck:
-                    presenter.ShowCosts(false);
-                    presenter.ShowRarity(true);
-                    presenter.ShowLevel(true);
-                    presenter.ShowFactoryCosts(false);
+                    //presenter.ShowCosts(false);
+                    //presenter.ShowRarity(true);
+                    //presenter.ShowLevel(true);
+                    //presenter.ShowFactoryCosts(false);
                     break;
                 case CardCategoryType.Factory:
-                    presenter.ShowCosts(false);
-                    presenter.ShowRarity(true);
-                    presenter.ShowLevel(false);
-                    presenter.ShowFactoryCosts(true);
+                    //presenter.ShowCosts(false);
+                    //presenter.ShowRarity(true);
+                    //presenter.ShowLevel(false);
+                    //presenter.ShowFactoryCosts(true);
                     break;
                 default:
                     break;

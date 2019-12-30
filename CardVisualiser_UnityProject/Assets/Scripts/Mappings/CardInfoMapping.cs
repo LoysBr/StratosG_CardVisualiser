@@ -14,6 +14,16 @@ namespace StratosphereGames
         Jeep = 3,
     }
 
+    public enum CardUIDataID
+    {
+        Costs = 0,
+        Picture = 1,
+        Level = 2,
+        Rarity = 3,
+        FactoryCosts = 4,
+        ClanCosts = 5,
+    }
+
     [Serializable]
     public class CardInfoMappingElement : IHasEnumType<CardId>
     {
