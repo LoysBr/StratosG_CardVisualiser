@@ -14,7 +14,7 @@ namespace StratosphereGames
         Jeep = 3,
     }
 
-    public enum CardUIDataID
+    public enum CardDataType
     {
         Costs = 0,
         Picture = 1,
@@ -37,19 +37,18 @@ namespace StratosphereGames
             }
         }
 
-        public List<UIDataMapping> CardInfoDataMapping;
-        public List<CardUIDataMapping> CardUIDataMapping;
+        public List<CardUIDataMapping> CardUIDataList;
     }
 
     [CreateAssetMenu(fileName = "CardInfoMapping", menuName = "AssetMappings/CardInfoMapping")]
     public class CardInfoMapping : MappingAsset<CardInfoMapping, CardId, CardInfoMappingElement>
     {
-        public List<UIDataMapping> CardInfoDataMappingForType(CardId id)
+        public List<CardUIDataMapping> CardInfoDataMappingForType(CardId id)
         {
             var element = GetElementForType(id);
             if(element != null)
             {
-                return element.CardInfoDataMapping;
+                return element.CardUIDataList;
             }
             return null;
         }
@@ -58,7 +57,7 @@ namespace StratosphereGames
     [Serializable]
     public class CardUIDataMapping : UIDataMapping
     {
-        public CardUIDataID CardUIDataID;
+        public CardDataType CardUIDataType;
 
     }
 }

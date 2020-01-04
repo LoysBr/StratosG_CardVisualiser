@@ -27,19 +27,18 @@ namespace StratosphereGames
         private GameObject                  CardElementPrefab; // cards will be added here
 
         private CardInfoMapping             CardMapping;
-
+        private CardCategoryMapping         CategoryMapping;
         private CardCategoryType            CurrentCategory;
-
-        private List<GameObject>            InstantiatedCards;
 
         private void Awake()
         {
             CardMapping = CardInfoMapping.GetMapping<CardInfoMapping>();
-            InstantiatedCards = new List<GameObject>();
+            CategoryMapping = CardCategoryMapping.GetMapping<CardCategoryMapping>();
         }
 
         private void Start()
-        {
+        {           
+            PopulateOneCardOfEach();
             SetCategory(StartCategory);
         }
 
@@ -72,74 +71,44 @@ namespace StratosphereGames
 
         private void UpdateContent()
         {
-            DeleteAllInstantiatedCards();
-
-            //for display testing purpose I add more cards
-            for (int i = 6; i > 0; i--)
-            {
-                PopulateOneCardOfEach(CurrentCategory);
-            }
+            DisplayCardElementsForCategory(CurrentCategory);
         }
 
-        private void PopulateOneCardOfEach(CardCategoryType category)
+        private void PopulateOneCardOfEach()
         {
-            foreach(CardInfoMappingElement cardMappingElt in CardMapping.Mapping)
+            if (CardMapping != null && CardMapping.Mapping != null)
             {
-                GameObject cardObj = Instantiate(CardElementPrefab, CardRoot);
-
-                if (cardMappingElt.CardInfoDataMapping != null)
+                foreach (CardInfoMappingElement cardMappingElt in CardMapping.Mapping)
                 {
-                    foreach (CardUIDataMapping mapping in cardMappingElt.CardInfoDataMapping)
+                    GameObject cardObj = Instantiate(CardElementPrefab, CardRoot);
+
+                    if (cardMappingElt.CardUIDataList != null)
                     {
-                        
-
-                        mapping.SetParentObject(cardObj);
-                        mapping.FindObjectFromName();
-                        mapping.SetValues();
-
-                        //TODO : show / hide management
-                       //mapping.CardUIDataID ==
-                        //List<CardUIDataID> cardIDS = CardCategoryMapping.GetMapping<CardCategoryMapping>().CardInfoDataMappingForType(category);
+                        foreach (CardUIDataMapping UiData in cardMappingElt.CardUIDataList)
+                        {
+                            UiData.SetParentObject(cardObj);
+                            UiData.FindObjectFromName();
+                            UiData.SetValues();
+                        }
                     }
                 }
-
-                //DisplayCardElementsForCategory(category, presenter);
-                InstantiatedCards.Add(cardObj);
+            }
+            else
+            {
+                Debug.LogError("Need a Card Info Mapping instance with elements.");
             }
         }
-
-        private void DeleteAllInstantiatedCards()
-        {
-            foreach (GameObject obj in InstantiatedCards)
-                Destroy(obj);
-        }
-
+                
         private void DisplayCardElementsForCategory(CardCategoryType category)
         {
-            switch (category)
-            {
-                case CardCategoryType.None:
-                    break;
-                case CardCategoryType.Shop:
-                    //presenter.ShowCosts(true);
-                    //presenter.ShowRarity(false);
-                    //presenter.ShowLevel(false);
-                    //presenter.ShowFactoryCosts(false);
-                    break;
-                case CardCategoryType.Deck:
-                    //presenter.ShowCosts(false);
-                    //presenter.ShowRarity(true);
-                    //presenter.ShowLevel(true);
-                    //presenter.ShowFactoryCosts(false);
-                    break;
-                case CardCategoryType.Factory:
-                    //presenter.ShowCosts(false);
-                    //presenter.ShowRarity(true);
-                    //presenter.ShowLevel(false);
-                    //presenter.ShowFactoryCosts(true);
-                    break;
-                default:
-                    break;
+            List<CardDataType> displayedCardDataTypes = CategoryMapping.DisplayedCardDataForCategoryType(category);
+
+            foreach (CardInfoMappingElement cardMappingElt in CardMapping.Mapping)
+            {                
+                foreach (CardUIDataMapping UiData in cardMappingElt.CardUIDataList)
+                {   
+                    UiData.Show(displayedCardDataTypes.Contains(UiData.CardUIDataType));
+                }                
             }
         }
     }

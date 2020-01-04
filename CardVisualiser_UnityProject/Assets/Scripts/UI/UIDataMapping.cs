@@ -5,7 +5,7 @@ using UnityEngine.UI;
 
 namespace StratosphereGames.Base
 {
-    public enum UIDataValueType
+    public enum UIDataType
     {
         None = 0,
         IntegersText = 1,
@@ -27,8 +27,7 @@ namespace StratosphereGames.Base
     [System.Serializable]
     public class UIDataMapping
     {       
-        public string Name;
-        public UIDataValueType Type;
+        public UIDataType Type;
         public UIDataValues UIDataValues;
         
         //user precises the name of the UIObject 
@@ -48,7 +47,7 @@ namespace StratosphereGames.Base
             {     
                 switch (Type)
                 {
-                    case UIDataValueType.IntegersText:
+                    case UIDataType.IntegersText:
                         Text[] textComponents = ParentObject.GetComponentsInChildren<Text>();
 
                         foreach (Text text in textComponents)
@@ -67,8 +66,8 @@ namespace StratosphereGames.Base
 
                         Debug.LogErrorFormat("Found no Text Component on UIObject or his children ({0}).", UIObjectName);
                         break;
-                    case UIDataValueType.Sprite:
-                    case UIDataValueType.ImageColor:
+                    case UIDataType.Sprite:
+                    case UIDataType.ImageColor:
                         Image[] imageComponents = ParentObject.GetComponentsInChildren<Image>();
 
                         foreach (Image img in imageComponents)
@@ -115,9 +114,9 @@ namespace StratosphereGames.Base
             {                  
                 switch (Type)
                 {
-                    case UIDataValueType.None:
+                    case UIDataType.None:
                         break;
-                    case UIDataValueType.IntegersText:
+                    case UIDataType.IntegersText:
                         Text txt = UIObject.GetComponent<Text>();
                         if(txt == null)
                         {
@@ -140,7 +139,7 @@ namespace StratosphereGames.Base
                             Debug.LogErrorFormat("No Text Component found on {0}.", UIObjectName);
                         }
                         break;
-                    case UIDataValueType.Sprite:
+                    case UIDataType.Sprite:
                         {
                             Image image = UIObject.GetComponent<Image>();
                             if (image == null)
@@ -157,7 +156,7 @@ namespace StratosphereGames.Base
                             }
                         }
                         break;
-                    case UIDataValueType.ImageColor:
+                    case UIDataType.ImageColor:
                         {
                             Image image = UIObject.GetComponent<Image>();
                             if (image)

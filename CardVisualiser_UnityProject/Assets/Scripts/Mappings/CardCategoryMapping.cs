@@ -27,18 +27,18 @@ namespace StratosphereGames
             }
         }
 
-        public List<CardUIDataID> ShownCardData;
+        public List<CardDataType> DisplayedCardData;
     }
 
     [CreateAssetMenu(fileName = "CardCategoryMapping", menuName = "AssetMappings/CardCategoryMapping")]
     public class CardCategoryMapping : MappingAsset<CardCategoryMapping, CardCategoryType, CardCategoryMappingElement>
     {
-        public List<CardUIDataID> CardInfoDataMappingForType(CardCategoryType type)
+        public List<CardDataType> DisplayedCardDataForCategoryType(CardCategoryType type)
         {
             var element = GetElementForType(type);
             if (element != null)
             {
-                return element.ShownCardData;
+                return element.DisplayedCardData;
             }
             return null;
         }

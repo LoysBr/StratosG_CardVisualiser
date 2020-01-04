@@ -14,9 +14,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Mapping:
   - _Type: 1
-    CardInfoDataMapping:
-    - Name: Picture
-      Type: 2
+    CardUIDataList:
+    - Type: 2
       UIDataValues:
         Format: 
         IntegerValue1: 0
@@ -24,8 +23,8 @@ MonoBehaviour:
         ColorValue: {r: 0, g: 0, b: 0, a: 0}
         SpriteTypeValue: 200
       UIObjectName: UnitIcon
-    - Name: Level
-      Type: 1
+      CardUIDataType: 1
+    - Type: 1
       UIDataValues:
         Format: LVL {0}
         IntegerValue1: 4
@@ -33,8 +32,8 @@ MonoBehaviour:
         ColorValue: {r: 0, g: 0, b: 0, a: 0}
         SpriteTypeValue: 0
       UIObjectName: TxtLevel
-    - Name: Costs
-      Type: 1
+      CardUIDataType: 2
+    - Type: 1
       UIDataValues:
         Format: 
         IntegerValue1: 200
@@ -42,8 +41,8 @@ MonoBehaviour:
         ColorValue: {r: 0, g: 0, b: 0, a: 0}
         SpriteTypeValue: 0
       UIObjectName: UnitCostDisplay
-    - Name: FactoryCosts
-      Type: 1
+      CardUIDataType: 0
+    - Type: 1
       UIDataValues:
         Format: '{0}/{1}'
         IntegerValue1: 2
@@ -51,8 +50,8 @@ MonoBehaviour:
         ColorValue: {r: 0, g: 0, b: 0, a: 0}
         SpriteTypeValue: 0
       UIObjectName: PartsCostDisplay
-    - Name: Rarity
-      Type: 3
+      CardUIDataType: 4
+    - Type: 3
       UIDataValues:
         Format: 
         IntegerValue1: 0
@@ -60,8 +59,8 @@ MonoBehaviour:
         ColorValue: {r: 0.123274505, g: 0.72, b: 0, a: 1}
         SpriteTypeValue: 0
       UIObjectName: RarityGlow
-    - Name: ClanCosts
-      Type: 1
+      CardUIDataType: 3
+    - Type: 1
       UIDataValues:
         Format: ClanCosts {0}
         IntegerValue1: 777
@@ -69,71 +68,10 @@ MonoBehaviour:
         ColorValue: {r: 0, g: 0, b: 0, a: 0}
         SpriteTypeValue: 0
       UIObjectName: TxtClanCosts
-    CardUIDataMapping:
-    - Name: Picture
-      Type: 2
-      UIDataValues:
-        Format: 
-        IntegerValue1: 0
-        IntegerValue2: 0
-        ColorValue: {r: 0, g: 0, b: 0, a: 0}
-        SpriteTypeValue: 200
-      UIObjectName: 
-      CardUIDataID: 1
-    - Name: FactoryCosts
-      Type: 1
-      UIDataValues:
-        Format: '{0}/{1}'
-        IntegerValue1: 2
-        IntegerValue2: 3
-        ColorValue: {r: 0, g: 0, b: 0, a: 0}
-        SpriteTypeValue: 0
-      UIObjectName: 
-      CardUIDataID: 4
-    - Name: 
-      Type: 0
-      UIDataValues:
-        Format: 
-        IntegerValue1: 0
-        IntegerValue2: 0
-        ColorValue: {r: 0, g: 0, b: 0, a: 0}
-        SpriteTypeValue: 0
-      UIObjectName: 
-      CardUIDataID: 0
-    - Name: 
-      Type: 0
-      UIDataValues:
-        Format: 
-        IntegerValue1: 0
-        IntegerValue2: 0
-        ColorValue: {r: 0, g: 0, b: 0, a: 0}
-        SpriteTypeValue: 0
-      UIObjectName: 
-      CardUIDataID: 0
-    - Name: 
-      Type: 0
-      UIDataValues:
-        Format: 
-        IntegerValue1: 0
-        IntegerValue2: 0
-        ColorValue: {r: 0, g: 0, b: 0, a: 0}
-        SpriteTypeValue: 0
-      UIObjectName: 
-      CardUIDataID: 0
-    - Name: 
-      Type: 0
-      UIDataValues:
-        Format: 
-        IntegerValue1: 0
-        IntegerValue2: 0
-        ColorValue: {r: 0, g: 0, b: 0, a: 0}
-        SpriteTypeValue: 0
-      UIObjectName: 
-      CardUIDataID: 0
+      CardUIDataType: 5
   - _Type: 2
-    CardInfoDataMapping:
-    - Name: Picture
-      Type: 2
+    CardUIDataList:
+    - Type: 2
       UIDataValues:
         Format: 
         IntegerValue1: 0
@@ -141,8 +79,8 @@ MonoBehaviour:
         ColorValue: {r: 0, g: 0, b: 0, a: 0}
         SpriteTypeValue: 201
       UIObjectName: UnitIcon
-    - Name: Level
-      Type: 1
+      CardUIDataType: 1
+    - Type: 1
       UIDataValues:
         Format: LVL {0}
         IntegerValue1: 2
@@ -150,8 +88,8 @@ MonoBehaviour:
         ColorValue: {r: 0, g: 0, b: 0, a: 0}
         SpriteTypeValue: 0
       UIObjectName: TxtLevel
-    - Name: Rarity
-      Type: 3
+      CardUIDataType: 2
+    - Type: 3
       UIDataValues:
         Format: 
         IntegerValue1: 0
@@ -159,8 +97,8 @@ MonoBehaviour:
         ColorValue: {r: 1, g: 0.5295368, b: 0, a: 1}
         SpriteTypeValue: 0
       UIObjectName: RarityGlow
-    - Name: Costs
-      Type: 1
+      CardUIDataType: 3
+    - Type: 1
       UIDataValues:
         Format: 
         IntegerValue1: 550
@@ -168,8 +106,8 @@ MonoBehaviour:
         ColorValue: {r: 0, g: 0, b: 0, a: 0}
         SpriteTypeValue: 0
       UIObjectName: UnitCostDisplay
-    - Name: FactoryCosts
-      Type: 1
+      CardUIDataType: 0
+    - Type: 1
       UIDataValues:
         Format: '{0}/{1}'
         IntegerValue1: 15
@@ -177,8 +115,8 @@ MonoBehaviour:
         ColorValue: {r: 0, g: 0, b: 0, a: 0}
         SpriteTypeValue: 0
       UIObjectName: PartsCostDisplay
-    - Name: ClanCosts
-      Type: 1
+      CardUIDataType: 4
+    - Type: 1
       UIDataValues:
         Format: ClanCosts {0}
         IntegerValue1: 666
@@ -186,20 +124,19 @@ MonoBehaviour:
         ColorValue: {r: 0, g: 0, b: 0, a: 0}
         SpriteTypeValue: 0
       UIObjectName: TxtClanCosts
-    CardUIDataMapping: []
+      CardUIDataType: 5
   - _Type: 3
-    CardInfoDataMapping:
-    - Name: Picture
-      Type: 2
+    CardUIDataList:
+    - Type: 2
       UIDataValues:
         Format: 
         IntegerValue1: 0
         IntegerValue2: 0
         ColorValue: {r: 0, g: 0, b: 0, a: 0}
-        SpriteTypeValue: 200
+        SpriteTypeValue: 202
       UIObjectName: UnitIcon
-    - Name: Costs
-      Type: 1
+      CardUIDataType: 1
+    - Type: 1
       UIDataValues:
         Format: 
         IntegerValue1: 325
@@ -207,8 +144,8 @@ MonoBehaviour:
         ColorValue: {r: 0, g: 0, b: 0, a: 0}
         SpriteTypeValue: 0
       UIObjectName: UnitCostDisplay
-    - Name: FactoryCosts
-      Type: 1
+      CardUIDataType: 0
+    - Type: 1
       UIDataValues:
         Format: '{0}/{1}'
         IntegerValue1: 2
@@ -216,8 +153,8 @@ MonoBehaviour:
         ColorValue: {r: 0, g: 0, b: 0, a: 0}
         SpriteTypeValue: 0
       UIObjectName: PartsCostDisplay
-    - Name: Rarity
-      Type: 3
+      CardUIDataType: 4
+    - Type: 3
       UIDataValues:
         Format: 
         IntegerValue1: 0
@@ -225,8 +162,8 @@ MonoBehaviour:
         ColorValue: {r: 1, g: 0, b: 0.96763754, a: 1}
         SpriteTypeValue: 0
       UIObjectName: RarityGlow
-    - Name: Level
-      Type: 1
+      CardUIDataType: 3
+    - Type: 1
       UIDataValues:
         Format: LVL {0}
         IntegerValue1: 6
@@ -234,8 +171,8 @@ MonoBehaviour:
         ColorValue: {r: 0, g: 0, b: 0, a: 0}
         SpriteTypeValue: 0
       UIObjectName: TxtLevel
-    - Name: ClanCosts
-      Type: 1
+      CardUIDataType: 2
+    - Type: 1
       UIDataValues:
         Format: ClanCosts {0}
         IntegerValue1: 4924
@@ -243,61 +180,4 @@ MonoBehaviour:
         ColorValue: {r: 0, g: 0, b: 0, a: 0}
         SpriteTypeValue: 0
       UIObjectName: TxtClanCosts
-    CardUIDataMapping: []
-  - _Type: 3
-    CardInfoDataMapping:
-    - Name: Picture
-      Type: 2
-      UIDataValues:
-        Format: 
-        IntegerValue1: 0
-        IntegerValue2: 0
-        ColorValue: {r: 0, g: 0, b: 0, a: 0}
-        SpriteTypeValue: 200
-      UIObjectName: UnitIcon
-    - Name: Costs
-      Type: 1
-      UIDataValues:
-        Format: 
-        IntegerValue1: 325
-        IntegerValue2: 0
-        ColorValue: {r: 0, g: 0, b: 0, a: 0}
-        SpriteTypeValue: 0
-      UIObjectName: UnitCostDisplay
-    - Name: FactoryCosts
-      Type: 1
-      UIDataValues:
-        Format: '{0}/{1}'
-        IntegerValue1: 2
-        IntegerValue2: 5
-        ColorValue: {r: 0, g: 0, b: 0, a: 0}
-        SpriteTypeValue: 0
-      UIObjectName: PartsCostDisplay
-    - Name: Rarity
-      Type: 3
-      UIDataValues:
-        Format: 
-        IntegerValue1: 0
-        IntegerValue2: 0
-        ColorValue: {r: 1, g: 0, b: 0.96763754, a: 1}
-        SpriteTypeValue: 0
-      UIObjectName: RarityGlow
-    - Name: Level
-      Type: 1
-      UIDataValues:
-        Format: LVL {0}
-        IntegerValue1: 6
-        IntegerValue2: 0
-        ColorValue: {r: 0, g: 0, b: 0, a: 0}
-        SpriteTypeValue: 0
-      UIObjectName: TxtLevel
-    - Name: ClanCosts
-      Type: 1
-      UIDataValues:
-        Format: ClanCosts {0}
-        IntegerValue1: 4924
-        IntegerValue2: 0
-        ColorValue: {r: 0, g: 0, b: 0, a: 0}
-        SpriteTypeValue: 0
-      UIObjectName: TxtClanCosts
-    CardUIDataMapping: []
+      CardUIDataType: 5

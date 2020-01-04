@@ -14,8 +14,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Mapping:
   - _Type: 1
-    ShownCardData: 010000000000000005000000
+    DisplayedCardData: 010000000000000005000000
   - _Type: 2
-    ShownCardData: 010000000300000002000000
+    DisplayedCardData: 010000000300000002000000
   - _Type: 3
-    ShownCardData: 010000000300000004000000
+    DisplayedCardData: 010000000300000004000000
