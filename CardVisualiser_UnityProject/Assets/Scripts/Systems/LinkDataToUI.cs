@@ -23,9 +23,14 @@ namespace StratosphereGames.Base
         public SpriteType SpriteTypeValue;
     }
 
-    //Make the link between UI Objects and UIDataValues
+    /// <summary>
+    /// Makes the link between UI Objects and UIDataValues
+    /// N.B. : usage :
+    /// At init you must execute in this order : SetParentObject,  
+    /// FindObjectFromName then SetValues
+    /// </summary>
     [System.Serializable]
-    public class UIDataMapping
+    public class LinkDataToUI
     {       
         public UIDataType Type;
         public UIDataValues UIDataValues;
@@ -40,7 +45,15 @@ namespace StratosphereGames.Base
         //to look for Child components only into this object
         protected GameObject ParentObject;
         public void SetParentObject(GameObject obj) { ParentObject = obj; }
-        
+
+        /// <summary>
+        /// Do this at init to find the GameObject thanks to the specified name
+        /// 
+        /// First you need to "SetParentObject" to specify where to look for children objects
+        /// Then we check if object name matches with one of the children
+        /// We also filter children depending on their components :
+        /// e.g. for a "IntegersText" we're looking only in objects with a Text component
+        /// </summary>
         public void FindObjectFromName()
         {
             if (ParentObject)
@@ -108,6 +121,10 @@ namespace StratosphereGames.Base
             }
         }              
 
+        /// <summary>
+        /// At init, after doing SetParentObject and FindObjectFromName, do this
+        /// to finally set the values (from Data, to UI Objects)
+        /// </summary>
         public void SetValues()
         {
             if (UIObject)

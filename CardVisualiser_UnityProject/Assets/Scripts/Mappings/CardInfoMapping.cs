@@ -55,7 +55,7 @@ namespace StratosphereGames
     }
 
     [Serializable]
-    public class CardUIDataMapping : UIDataMapping
+    public class CardUIDataMapping : LinkDataToUI
     {
         public CardDataType CardUIDataType;
 
